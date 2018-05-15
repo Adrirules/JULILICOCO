@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div id="article">
+        <h2> <%= @article.title  %> </h2>
+        <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
+        <p> <%= @article.chapo  %> </p>
+        <p> <%= @article.content  %> </p>
+      </div>
+    </div>
+  </div>
+</div>
