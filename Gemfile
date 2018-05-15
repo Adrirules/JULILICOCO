@@ -16,6 +16,7 @@ gem 'rails_admin', '>= 1.0.0.rc'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'mini_magick'
 
 
 
