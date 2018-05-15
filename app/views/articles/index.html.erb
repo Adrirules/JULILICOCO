@@ -1,0 +1,25 @@
+
+
+
+<div class="container">
+  <div class="row">
+    <h1> Les articles </h1>
+
+    <div class="col-sm-8 col-sm-offset-2">
+      <div id="articles">
+        <% @articles.each do |article| %>
+        <h2> <%= article.title  %> </h2>
+        <%= cl_image_tag article.photo, height: 300, width: 400, crop: :fill %>
+        <p> <%= article.chapo  %> </p>
+        <p> <%= article.content  %> </p>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

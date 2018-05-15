@@ -10,6 +10,16 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+gem 'mini_magick'
+
+
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 4.7'
