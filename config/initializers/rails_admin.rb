@@ -10,6 +10,11 @@ RailsAdmin.config do |config|
   # end
   # config.current_user_method(&:current_user)
 
+  config.model Article do
+    edit do
+     configure :content, :ck_editor
+    end
+  end
   ## == Cancan ==
   # config.authorize_with :cancan
 
