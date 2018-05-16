@@ -33,10 +33,10 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :chapo, :photo, :content)
+    params.require(:article).permit(:title, :chapo, :photo, :content, :slug)
   end
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 end

@@ -1,22 +1,16 @@
-<div class="container">
+<div class="container-white">
+  <h1> Les articles </h1>
   <div class="row">
-    <h1> Les articles </h1>
-
-    <div class="col-sm-8 col-sm-offset-2">
-      <div id="articles">
-        <% @articles.each do |article| %>
-        <h2> <%= article.title  %> </h2>
-        <%= cl_image_tag article.photo, height: 300, width: 400, crop: :fill %>
-        <p> <%= article.chapo  %> </p>
-        <p> <%= raw article.content  %> </p>
-        <% end  %>
+    <% @articles.each do |article| %>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="card">
+        <%= link_to cl_image_tag(article.photo, height: 300, width: 300, crop: :fill) , article_path(article) %>
+        <h3> <%= link_to article.title , article_path(article)  %> </h3>
+        <p class="italic"> <%= article.chapo  %> </p>
+        <p> <%=  truncate(sanitize(article.content,tags: []), :length => 150 , :separator => ' ') %> </p>
+        </div>
       </div>
-    </div>
+    <% end  %>
   </div>
 </div>
-
-
-
-
-
 

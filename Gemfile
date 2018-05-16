@@ -18,7 +18,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'mini_magick'
 
-
+gem 'friendly_id', '~> 5.1.0'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

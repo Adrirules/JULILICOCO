@@ -8,4 +8,6 @@ class Article < ApplicationRecord
   #photo with cloudinary and carrierwaves
   mount_uploader :photo, PhotoUploader
 
+  extend FriendlyId
+    friendly_id :title, use: :slugged
 end
