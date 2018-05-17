@@ -1,37 +1,21 @@
-<div class="navbar-wagon">
-  <!-- Title -->
-  <%= link_to "Julilicoco", root_path %>
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <% if user_signed_in? %>
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "https://media.licdn.com/dms/image/C5103AQE-qaGQAXuPBg/profile-displayphoto-shrink_800_800/0?e=1531958400&v=beta&t=DpppbcuIa9jMButjLgDDd7sVLobKLgHmm-3TirUy4Po", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-    <%= link_to "Articles", articles_path  %>
-    <% end %>
+<div id='main-navigation' >
+  <div class="left-nav">
+    <%= link_to "Julilicoco", root_path, class: 'name' %>
+    <a href="https://www.instagram.com/julilicoco/"><i class="fa fa-instagram social"></i></a>
+    <a href="https://www.facebook.com/Julilicoco/"><i class="fa fa-facebook social"></i></a>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-<!--   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
-  </div> -->
+  <div class="right-nav">
+    <% if user_signed_in? %>
+      <div>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= link_to "LES RECETTES", articles_path, class: 'link-nav'  %>
+      <%= link_to "RECETTES SUCRÉES", articles_path, class: 'link-nav'  %>
+      <%= link_to "RECETTES SALÉES", articles_path, class: 'link-nav'  %>
+    <% end %>
+  </div>
 </div>
-
