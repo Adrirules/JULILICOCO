@@ -2,7 +2,8 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div id="article">
         <h2> <%= @article.title  %> </h2>
-        <%= cl_image_tag @article.photo, height: 600, width: 800, crop: :fill %>
+        <%= cl_image_tag @article.photo, height: 600, crop: :fill %>
+        <p><%= @article.created_at.strftime("%d/%m/%Y") %> par <%= @article.user.username %></p>
         <p> <%= @article.chapo  %> </p>
         <p> <%= raw @article.content  %> </p>
       </div>

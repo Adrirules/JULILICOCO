@@ -1,0 +1,62 @@
+.container {
+  background-color: $background;
+}
+  .main-title-index {
+    border-bottom: 5px solid #fff58a;
+    border-radius:5px
+  }
+.card {
+  border-radius: 5px 5px 0px 0px ;
+  // height: 300px;
+  margin: 0px 50px 20px 50px;
+  background-color: white;
+
+  }
+
+
+  .photo-index {
+    border-radius: 5px 5px 0px 0px ;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+    }
+
+  .article-index {
+    border: 5px solid #F3EEEE;
+    padding: 0px 20px 10px 20px;
+    }
+
+
+  .title-index{
+    color: $dark;
+    &:hover{
+      text-decoration: none;
+      color: $light;
+    }
+  }
+  .date-index{
+    color: $grey;
+    font-size: 0.8em;
+    margin-bottom: 0px;
+}
+
+  .chapo-index{
+    font-style: italic;
+    margin-bottom: 0px;
+
+  }
+
+
+  .content-index{
+      margin-bottom: 0px;
+
+  }
+
+
+// mobile
+@media(max-width:750px) {
+
+
+
+}

@@ -14,7 +14,7 @@
     font-weight: 400;
     font-size: 1em;
     text-transform: uppercase;
-    border: 2px solid $border;
+    border: 1px solid $border;
     padding: 0.75em 1rem;
     text-decoration: none;
     border-radius: 5px;
@@ -29,11 +29,13 @@
   .link-nav {
     color: $dark;
     text-decoration: none;
+
     margin: 0 1rem;
     padding: 0em 1rem;
     font-size: 1.6rem;
   }
   .link-nav:hover {
     color: $light;
+    border-bottom: 4px solid $highlight;
   }
 }

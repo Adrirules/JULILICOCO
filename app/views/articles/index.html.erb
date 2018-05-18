@@ -1,16 +1,28 @@
-<div class="container-white">
-  <h1> Les articles </h1>
+<div class="container">
+  <h1 class="main-title-index"> Les recettes  </h1>
   <div class="row">
     <% @articles.each do |article| %>
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-xs-12">
+    <%= link_to article_path(article)  do %>
         <div class="card">
-        <%= link_to cl_image_tag(article.photo, height: 300,  crop: :fill) , article_path(article) %>
-        <h3> <%= link_to article.title , article_path(article)  %> </h3>
-        <p class="italic"> <%= article.chapo  %> </p>
-        <p> <%=  truncate(sanitize(article.content,tags: []), :length => 150 , :separator => ' ') %> </p>
+          <div class="photo-index">
+            <%=  cl_image_tag article.photo, :class =>  "photo-index" %>
+          </div>
+          <div class="article-index">
+            <h3 class="title-index"> <%= link_to article.title , article_path(article), class: 'title-index'  %> </h3>
+
+            <p class="date-index"><%= article.created_at.strftime("%d/%m/%Y")%> par <%= article.user.username %></p>
+
+            <p class="chapo-index"> <%= article.chapo  %> </p>
+
+            <p class="content-index"> <%=  truncate(sanitize(article.content,tags: []), :length => 150 , :separator => ' ') %></p>
+          </div>
+
         </div>
+        <% end %>
       </div>
-    <% end  %>
+    <% end %>
   </div>
 </div>
+
 
