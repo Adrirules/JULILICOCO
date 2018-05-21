@@ -2,9 +2,24 @@ class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  def index         # GET /articles
-    @articles = Article.all
+  def search
+    if params[:query].present?
+      @articles = Article.search(params[:query])
+    else
+      @articles = Article.all
+    end
   end
+
+  def index     # GET /articles
+    # search = params[:term].present? ? params[:term] : nil
+    # @articles = if search
+    #   Article.search(search)
+    # else
+      @articles = Article.all
+    # end
+  end
+
+
 
   def show          # GET /articles/:id
   end
@@ -28,6 +43,17 @@ class ArticlesController < ApplicationController
   def destroy       # DELETE /articles/:id
     @article.destroy
   end
+
+
+  # def autocomplete
+  #   render json: Article.search(params[:search], {
+  #     fields: ["title^5"],
+  #     match: :word_start,
+  #     limit: 10,
+  #     load: false,
+  #     misspellings: {below: 5}
+  #   }).map(&:title)
+  # end
 
 
   private

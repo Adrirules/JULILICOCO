@@ -21,6 +21,9 @@ gem 'mini_magick'
 gem 'friendly_id', '~> 5.1.0'
 gem 'google-analytics-rails', '1.1.1'
 
+gem 'searchkick'
+gem 'jquery-ui-rails'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

@@ -18,4 +18,17 @@
       <%= link_to "RECETTES SALÉES", articles_path, class: 'link-nav'  %>
     <% end %>
   </div>
+
+   <div class="search-container">
+      <div class="form-search-nav">
+
+      <%= form_tag search_articles_path, method: :get, role: "search" do %>
+        <%= text_field_tag :query, params[:query], id:"articles_search", autocomplete: :off, class: "form-control", placeholder: "Trouvez un article"%>
+      </div>
+      <div class="submit-btn-index">
+        <%= submit_tag "search", name: nil %>
+
+      </div>
+        <% end %>
+  </div>
 </div>
