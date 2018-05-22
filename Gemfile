@@ -23,6 +23,7 @@ gem 'google-analytics-rails', '1.1.1'
 
 gem 'searchkick'
 gem 'jquery-ui-rails'
+gem 'social-share-button'
 
 
 gem 'autoprefixer-rails'

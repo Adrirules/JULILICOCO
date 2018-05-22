@@ -3,26 +3,33 @@
   <div class="row">
     <% @articles.each do |article| %>
       <div class="col-sm-6 col-xs-12">
-    <%= link_to article_path(article)  do %>
-        <div class="card">
-          <div class="photo-index">
-            <%=  cl_image_tag article.photo, :class =>  "photo-index" %>
+        <%= link_to article_path(article)  do %>
+          <div class="card">
+            <!-- <div class="photo-index">
+            <%#=  cl_image_tag article.photo, :class =>  "photo-index" %>
+            </div> -->
+
+            <div class="card-image-index" style="background-image: url('<%= cl_image_path article.photo, height: 400, crop: :fit %>')">
+            </div>
+
+            <div class="article-index">
+              <h3 class="title-index"> <%=  article.title  %> </h3>
+
+              <p class="date-index"><%= article.created_at.strftime("%d/%m/%Y")%> par <%= article.user.username %></p>
+
+              <p class="chapo-index"> <%=  truncate(sanitize(article.chapo,tags: []), :length => 250 , :separator => ' ') %> </p>
+
+              <!--  <p class="content-index"> <%#=  truncate(sanitize(article.content,tags: []), :length => 150 , :separator => ' ') %></p> -->
+            </div>
           </div>
-          <div class="article-index">
-            <h3 class="title-index"> <%= link_to article.title , article_path(article), class: 'title-index'  %> </h3>
-
-            <p class="date-index"><%= article.created_at.strftime("%d/%m/%Y")%> par <%= article.user.username %></p>
-
-            <p class="chapo-index"> <%= article.chapo  %> </p>
-
-            <p class="content-index"> <%=  truncate(sanitize(article.content,tags: []), :length => 150 , :separator => ' ') %></p>
-          </div>
-
-        </div>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
+
 
 

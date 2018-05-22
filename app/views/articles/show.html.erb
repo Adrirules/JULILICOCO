@@ -6,6 +6,8 @@
         <p><%= @article.created_at.strftime("%d/%m/%Y") %> par <%= @article.user.username %></p>
         <p> <%= @article.chapo  %> </p>
         <p> <%= raw @article.content  %> </p>
+        <%= social_share_button_tag(@article.title) %>
       </div>
+      <div> <h3>Vous allez aimer aussi :</h3></div>
     </div>
   </div>
