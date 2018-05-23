@@ -19,4 +19,8 @@ class Article < ApplicationRecord
 
   extend FriendlyId
     friendly_id :title, use: :slugged
+
+  # attr_accessor :slug
+  attr_accessor :title, :chapo, :photo, :user_id, :content, :tag_list, :slug, :user
+
 end
