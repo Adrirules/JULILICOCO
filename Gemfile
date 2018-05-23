@@ -12,6 +12,8 @@ gem 'redis'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
+gem 'rails_admin_tag_list'
+
 
 # text editor for the content
 gem 'ckeditor', github: 'galetahub/ckeditor'

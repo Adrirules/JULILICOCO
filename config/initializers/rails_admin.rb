@@ -1,3 +1,4 @@
+include RailsAdminTagList::SuggestionsHelper
 RailsAdmin.config do |config|
   config.authorize_with do |controller|
     redirect_to main_app.root_path unless current_user && current_user.admin
@@ -50,30 +51,40 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-     config.model Article do
-     list do
-       field :title
-       field :chapo
-       field :content
-       field :photo
-       field :tag_list
-       field :slug
-       field :user
-     end
+  config.model Article do
+    edit do
+      fields_of_type :tag_list do
+        partial 'tag_list_with_suggestions'
 
-     edit do
-       field :title
-       field :chapo
-       field :content
-       field :photo
+        # the option sets max count of suggestions (default is 100); set -1 to abolish the limit
+        ratl_max_suggestions -1
+      end
+    end
+  end
+   #   config.model Article do
+   #   list do
+   #     field :title
+   #     field :chapo
+   #     field :content
+   #     field :photo
+   #     field :tag_list
+   #     field :slug
+   #     field :user
+   #   end
 
-       field :tag_list do
-         html_attributes do
-           {:style => "width:90%"}
-         end
-       end
-       field :slug
-       field :user
-     end
-   end
+   #   edit do
+   #     field :title
+   #     field :chapo
+   #     field :content
+   #     field :photo
+
+   #     field :tag_list do
+   #       html_attributes do
+   #         {:style => "width:90%"}
+   #       end
+   #     end
+   #     field :slug
+   #     field :user
+   #   end
+   # end
 end
