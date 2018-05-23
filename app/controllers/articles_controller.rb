@@ -15,7 +15,12 @@ class ArticlesController < ApplicationController
     # @articles = if search
     #   Article.search(search)
     # else
+
+    if params[:tag]
+      @articles = Article.tagged_with(params[:tag])
+    else
       @articles = Article.all
+    end
     # end
   end
 
@@ -59,7 +64,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :chapo, :photo, :content, :slug)
+    params.require(:article).permit(:title, :chapo, :photo, :content, :slug, :tag_list)
   end
 
   def set_article

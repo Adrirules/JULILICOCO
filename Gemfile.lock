@@ -7,6 +7,13 @@ GIT
       terrapin
 
 GIT
+  remote: git://github.com/mbleigh/acts-as-taggable-on.git
+  revision: 38fefffc8f104455f87fdccd77841a2f550b16c6
+  specs:
+    acts-as-taggable-on (5.0.0)
+      activerecord (>= 4.2.8)
+
+GIT
   remote: git://github.com/mshibuya/remotipart.git
   revision: e08ea9a3aa8db9a8b2b97b6c9e7b078ed08915f2
   specs:
@@ -296,6 +303,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   autoprefixer-rails
   bootstrap-sass (~> 3.3)
   carrierwave (~> 1.2)

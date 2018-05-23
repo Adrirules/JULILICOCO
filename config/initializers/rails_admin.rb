@@ -18,6 +18,10 @@ RailsAdmin.config do |config|
   ## == Cancan ==
   # config.authorize_with :cancan
 
+
+
+
+
   ## == Pundit ==
   # config.authorize_with :pundit
 
@@ -45,4 +49,31 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+     config.model Article do
+     list do
+       field :title
+       field :chapo
+       field :content
+       field :photo
+       field :tag_list
+       field :slug
+       field :user
+     end
+
+     edit do
+       field :title
+       field :chapo
+       field :content
+       field :photo
+
+       field :tag_list do
+         html_attributes do
+           {:style => "width:90%"}
+         end
+       end
+       field :slug
+       field :user
+     end
+   end
 end

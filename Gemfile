@@ -13,7 +13,10 @@ gem 'redis'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
+# text editor for the content
 gem 'ckeditor', github: 'galetahub/ckeditor'
+
+
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'mini_magick'
@@ -21,9 +24,14 @@ gem 'mini_magick'
 gem 'friendly_id', '~> 5.1.0'
 gem 'google-analytics-rails', '1.1.1'
 
+# Elastic sarch
 gem 'searchkick'
 gem 'jquery-ui-rails'
+# button social media share
 gem 'social-share-button'
+
+# tag for article
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 
 gem 'autoprefixer-rails'

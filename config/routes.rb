@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'tags/:tag', to: 'articles#index', as: :tag
+
   root to: 'pages#home'
 end

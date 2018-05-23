@@ -11,7 +11,11 @@ class Article < ApplicationRecord
   # Elestic Search
   searchkick language: "french"
 
-  # searchkick settings: {blocks: {read_only: false}}
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  # acts_as_taggable_on :skills, :interests
+
+  # has_many :tag_taggings, class_name: 'ActsAsTaggableOn::Tagging'
+  # has_many :tags, class_name: 'ActsAsTaggableOn::Tag'
 
   extend FriendlyId
     friendly_id :title, use: :slugged
