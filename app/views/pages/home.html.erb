@@ -1,3 +1,41 @@
 <%= link_to "LES RECETTES", articles_path, class: 'link-nav'  %>
 
 
+<%  tags = ActsAsTaggableOn::Tag.all %>
+
+<%# ActsAsTaggableOn::Tagging %>
+
+
+<%#= raw(tags.each {|tag| tag.name}.join(', ')) %>
+
+<%#  tags.each do |tag| %>
+  <%#  if tag.name.start_with? 'b'%>
+    <%#= tag.name %>
+  <%# else %>
+
+  <%# end %>
+<%# end %>
+
+
+<% raw(ActsAsTaggableOn::Tag.all.map { |t| link_to t, tag_path(t.name) }.join(', ')) %></p>
+
+
+
+
+<% alpha = ('a'..'z').to_a%>
+
+<% alpha.each do |letter| %>
+
+
+<%  tags.each do |tag| %>
+  <%  if tag.name.start_with? letter%>
+  <ul>
+    <li> <%= link_to tag, tag_path(tag.name) %></li>
+  </ul>
+  <% else %>
+
+  <% end %>
+<% end %>
+<% end  %>
+
+

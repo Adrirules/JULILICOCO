@@ -70,9 +70,46 @@
     margin-right: 0px;
     }
 
-// mobile
-@media(max-width:990px) {
-.card {
+// tablet
+@media(max-width:1025px) {
+  .card {
     margin: 0px 0px 50px 0px; ;
   }
+  .card-image-index {
+    height: 200px;
+  }
+  .article-index {
+    height: 63%;
+  }
+
 }
+
+
+
+
+// // mobile
+@media(max-width:375px) {
+.title-index {
+    margin-top: 10px
+  }
+
+  .date-index {
+    font-size: 0.6em;
+  }
+
+  .title-index {
+    font-size: 18px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -18,6 +18,8 @@
   color: $grey;
   font-size: 0.8em;
   margin-bottom: 5px;
+  margin-top: 15px;
+
 }
 .content-show {
   margin: 0 10px 0 10px;
@@ -28,12 +30,6 @@
   font-weight: bold;
 }
 
-
-
-
-
-
-
 .you-like h3 {
   background-color: $light;
   width: 100%;
@@ -41,3 +37,38 @@
   margin-bottom: 0;
   color: white;
 }
+
+
+// tablet
+@media(max-width:1025px) {
+  .image-show {
+    height: 250px;
+  }
+  h2, .h2 {
+      font-size: 20px;
+  }
+
+  .title-show {
+  text-align: center;
+  padding: 10px 0 10px;
+  margin: 15px 0 0 0;
+  }
+}
+
+// // mobile
+@media(max-width:375px) {
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
