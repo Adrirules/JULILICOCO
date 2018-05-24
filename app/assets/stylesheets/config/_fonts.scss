@@ -16,12 +16,14 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 
 
 p > a {
-  border-bottom: solid 5px #FF7A8A;
+  border-bottom: solid 4px #FF7A8A;
   color: #333333;
+  margin: 1px;
+  padding: 0px 2px 0;
  &:hover {
   background: #FF7A8A;
-  color: #333333
-  // text-decoration: none;
+  color: #333333;
+  text-decoration: none;
  }
 }
 

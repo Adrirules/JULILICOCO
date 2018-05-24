@@ -11,20 +11,12 @@ class ArticlesController < ApplicationController
   end
 
   def index     # GET /articles
-    # search = params[:term].present? ? params[:term] : nil
-    # @articles = if search
-    #   Article.search(search)
-    # else
-
     if params[:tag]
       @articles = Article.tagged_with(params[:tag])
     else
-      @articles = Article.all
+      @articles = most_recent
     end
-    # end
   end
-
-
 
   def show          # GET /articles/:id
   end
@@ -49,6 +41,9 @@ class ArticlesController < ApplicationController
     @article.destroy
   end
 
+  def home_article
+    last_number(3)
+  end
 
   # def autocomplete
   #   render json: Article.search(params[:search], {
@@ -69,5 +64,13 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.friendly.find(params[:id])
+  end
+
+  def most_recent
+    Article.order(created_at: :desc)
+  end
+
+  def last_number(number)
+    Article.order(created_at: :desc).limit(number)
   end
 end

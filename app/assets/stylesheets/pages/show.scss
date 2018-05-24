@@ -1,0 +1,43 @@
+.article-show {
+  background-color: white;
+}
+
+.title-show {
+ text-align: center;
+  padding: 10px 0 20px;
+  margin: 40px 0 0 0;}
+
+
+.image-show {
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+}
+
+.date-show {
+  color: $grey;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+.content-show {
+  margin: 0 10px 0 10px;
+}
+
+
+.tags {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+.you-like h3 {
+  background-color: $light;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: white;
+}

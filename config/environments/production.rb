@@ -95,6 +95,7 @@ config.webpacker.check_yarn_integrity = false
 end
 
 
+Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
 
 
   # Google analytics tracking

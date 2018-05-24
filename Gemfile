@@ -28,6 +28,9 @@ gem 'google-analytics-rails', '1.1.1'
 
 # Elastic sarch
 gem 'searchkick'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 gem 'jquery-ui-rails'
 # button social media share
 gem 'social-share-button'

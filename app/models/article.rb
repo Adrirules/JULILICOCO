@@ -26,5 +26,6 @@ class Article < ApplicationRecord
 
   # attr_accessor :slug
   # attr_accessor :title, :chapo, :photo, :user_id, :content, :tag_list, :slug, :user
+  include Elasticsearch::Model
 
 end

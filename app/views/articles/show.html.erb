@@ -1,15 +1,24 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div id="article">
-        <h2> <%= @article.title  %> </h2>
-        <%= cl_image_tag @article.photo, height: 600, crop: :fill %>
-        <p><%= @article.created_at.strftime("%d/%m/%Y") %> par <%= @article.user.username %></p>
-        <p> <%= @article.chapo  %> </p>
-        <p> <%= raw @article.content  %> </p>
-        <p>Tags: <%= @article.tag_list %></p>
-        <p>Tags: <%= raw(@article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
-        <%= social_share_button_tag(@article.title) %>
+      <div class="article-show">
+        <div class="title-show">
+          <h2> <%= @article.title  %> </h2>
+        </div>
+        <div class="image-show" style="background-image: url('<%= cl_image_path @article.photo, height: 600, crop: :fill %>')">
+        </div>
+        <div>
+          <div class="content-show">
+            <p class="date-show"><%= @article.created_at.strftime("%d/%m/%Y") %> par <%= @article.user.username %></p>
+            <p> <%= @article.chapo  %> </p>
+            <p> <%= raw @article.content  %> </p>
+            <p class='tags'>Tags : <%= raw(@article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+            <%= social_share_button_tag(@article.title) %>
+          </div>
+        </div>
       </div>
-      <div> <h3>Vous allez aimer aussi :</h3></div>
     </div>
   </div>
+      <div class="you-like"> <h3>Vous allez aimer aussi :</h3></div>
+
+
+

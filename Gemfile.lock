@@ -101,6 +101,11 @@ GEM
       elasticsearch-transport (= 6.0.2)
     elasticsearch-api (6.0.2)
       multi_json
+    elasticsearch-model (5.0.0)
+      activesupport (> 3)
+      elasticsearch (> 1)
+      hashie
+    elasticsearch-rails (5.0.2)
     elasticsearch-transport (6.0.2)
       faraday
       multi_json
@@ -312,6 +317,8 @@ DEPENDENCIES
   ckeditor!
   cloudinary
   devise
+  elasticsearch-model
+  elasticsearch-rails
   figaro
   font-awesome-sass (~> 4.7)
   friendly_id (~> 5.1.0)
