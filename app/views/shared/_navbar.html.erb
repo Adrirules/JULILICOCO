@@ -5,7 +5,7 @@
     <a href="https://www.facebook.com/Julilicoco/"><i class="fa fa-facebook social"></i></a>
   </div>
 
-  <div class="right-nav">
+  <div class="right-nav hidden-xs hidden-sm ">
     <% if user_signed_in? %>
       <div>
         <%= link_to destroy_user_session_path, method: :delete do %>
@@ -19,16 +19,27 @@
     <% end %>
   </div>
 
-   <div class="search-container">
-      <div class="form-search-nav">
-
-      <%= form_tag search_articles_path, method: :get, role: "search" do %>
-        <%= text_field_tag :query, params[:query], id:"articles_search", autocomplete: :off, class: "form-control", placeholder: "Trouvez un article"%>
-      </div>
-      <div class="submit-btn-index">
-        <%= submit_tag "search", name: nil %>
-
-      </div>
-        <% end %>
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li> <%= link_to "LES RECETTES", articles_path %></li>
+        <li><%= link_to "RECETTES SUCRÉES", articles_path %></li>
+        <li><%= link_to "RECETTES SALÉES", articles_path  %></li>
+      </ul>
+    </div>
   </div>
+</div>
+
+<!--   <div class="search-container">
+    <div class="form-search-nav">
+      <%#= form_tag search_articles_path, method: :get, role: "search" do %>
+        <%#= text_field_tag :query, params[:query], id:"articles_search", autocomplete: :off, class: "form-control", placeholder: "Trouvez un article"%>
+    </div>
+    <div class="submit-btn-index">
+      <%#= submit_tag "search", name: nil %>
+    </div>
+      <#% end %>
+  </div> -->
 </div>
