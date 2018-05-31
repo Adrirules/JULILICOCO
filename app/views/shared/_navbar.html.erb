@@ -13,9 +13,10 @@
         <% end %>
       </div>
     <% else %>
+      <%= link_to "HOME", root_path, class: 'link-nav'   %>
       <%= link_to "LES RECETTES", articles_path, class: 'link-nav'  %>
-      <%= link_to "RECETTES SUCRÉES", articles_path, class: 'link-nav'  %>
-      <%= link_to "RECETTES SALÉES", articles_path, class: 'link-nav'  %>
+      <%= link_to "SUCRÉES", tag_path('sucree'), class: 'link-nav'  %>
+      <%= link_to "SALÉES", tag_path('salee'), class: 'link-nav'  %>
     <% end %>
   </div>
 
@@ -24,13 +25,17 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+       <li> <%= link_to "HOME", root_path %> </li>
         <li> <%= link_to "LES RECETTES", articles_path %></li>
-        <li><%= link_to "RECETTES SUCRÉES", articles_path %></li>
-        <li><%= link_to "RECETTES SALÉES", articles_path  %></li>
+        <li><%= link_to "SUCRÉES", tag_path('sucree') %></li>
+        <li><%= link_to "SALÉES", tag_path('salee')  %></li>
       </ul>
     </div>
   </div>
 </div>
+
+
+
 
 <!--   <div class="search-container">
     <div class="form-search-nav">

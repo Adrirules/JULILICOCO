@@ -12,9 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+
   get 'tags/:tag', to: 'articles#index', as: :tag
-
-  # get 'tags', to: "tags#index"
-
+  get 'tags', to: 'pages#tags'
   root to: 'pages#home'
 end
