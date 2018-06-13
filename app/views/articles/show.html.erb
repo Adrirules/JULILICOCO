@@ -12,7 +12,7 @@
             <p> <%= @article.chapo  %> </p>
             <p> <%= raw @article.content  %> </p>
             <p class='tags'>Tags : <%= raw(@article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
-            <%= social_share_button_tag(@article.title) %>
+            <%#= social_share_button_tag(@article.title) %>
           </div>
         </div>
       </div>
