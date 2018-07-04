@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+
 
 development:
   <<: *default
@@ -83,3 +85,4 @@ production:
   database: JULILICOCO_production
   username: JULILICOCO
   password: <%= ENV['JULILICOCO_DATABASE_PASSWORD'] %>
+

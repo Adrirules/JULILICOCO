@@ -1,0 +1,13 @@
+    <%  @articles = Article.order(created_at: :desc).limit(1)%>
+
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-xs-12">
+        <%= link_to article_path(article), class: 'link-card-home' do %>
+            <div class="card-image-home" style="background-image: url('<%= cl_image_path article.photo, crop: :fit %>')">
+            </div>
+              <h3 class="title-home"> <%=  article.title  %> </h3>
+        <% end %>
+      </div>
+    <% end %>
+  </div>

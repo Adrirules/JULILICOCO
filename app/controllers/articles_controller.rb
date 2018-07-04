@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :home_articles]
 
   def search
     if params[:query].present?
@@ -41,8 +41,10 @@ class ArticlesController < ApplicationController
     @article.destroy
   end
 
-  def home_article
-    last_number(3)
+  def home_articles
+    @articles = Article.order(created_at: :desc).limit(3)
+
+    #last_number(3)
   end
 
   # def autocomplete
